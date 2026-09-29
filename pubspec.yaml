@@ -1,0 +1,60 @@
+name: investors_edge_prototype
+description: >-
+  Prototype of the Investor's Edge native home screen, built on the
+  OBR Design System primitives.
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.6.0
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Our code doesn't use CupertinoIcons, but Flutter's own Cupertino widgets
+  # (e.g. the iOS page transitions) reference the font. Including it stops
+  # the "Expected to find fonts for (packages/cupertino_icons/...)" build
+  # warning, and the icon tree-shaker keeps only the glyphs actually used.
+  cupertino_icons: ^1.0.8
+  go_router: ^16.0.0
+  intl: ^0.20.2
+  # Launcher-icon shortcuts (iOS Home Screen quick actions, Android app
+  # shortcuts).
+  quick_actions: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  # Generates the iOS and Android launcher icons from assets/icon/:
+  #   dart run flutter_launcher_icons
+  flutter_launcher_icons: ^0.14.3
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/app_icon.png
+  remove_alpha_ios: true
+  # Android 8+ adaptive icon: dark-gray background plus the ring on its own.
+  adaptive_icon_background: "#383B3E"
+  adaptive_icon_foreground: assets/icon/app_icon_foreground.png
+
+flutter:
+  uses-material-design: true
+
+  # Whitney is the OBR typeface, but its font files aren't in the design
+  # system export. Drop the licensed files into assets/fonts/ and uncomment
+  # this block. Until then, text falls back to Arial and then the platform font.
+  #
+  # fonts:
+  #   - family: Whitney
+  #     fonts:
+  #       - asset: assets/fonts/Whitney-Light.otf
+  #         weight: 300
+  #       - asset: assets/fonts/Whitney-Book.otf
+  #         weight: 400
+  #       - asset: assets/fonts/Whitney-Medium.otf
+  #         weight: 500
+  #       - asset: assets/fonts/Whitney-Semibold.otf
+  #         weight: 600
