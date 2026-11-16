@@ -1,0 +1,85 @@
+/* Material Symbols (Outlined), bundled so icons work offline.
+   Apache License 2.0 (see fonts/LICENSE-material-symbols). */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: block;
+  src: url('../fonts/material-symbols-outlined.woff2') format('woff2');
+}
+
+/* OBR Design System primitives (same values as lib/theme/obr_tokens.dart). */
+:root {
+  --brand-50: #FEF2F2; --brand-100: #FDE6E6; --brand-200: #FBD0D3;
+  --brand-300: #F8A9AF; --brand-400: #F37984; --brand-500: #E94A5C;
+  --brand-600: #C41F3E; --brand-700: #8B1D41; --brand-800: #612141;
+  --brand-900: #45172E;
+
+  --gray-0: #FFFFFF; --gray-50: #FAFAFA; --gray-100: #F2F3F2;
+  --gray-200: #DDDDDD; --gray-300: #D9D9D6; --gray-400: #BBBCBC;
+  --gray-500: #86888A; --gray-600: #606366; --gray-700: #383B3E;
+  --gray-800: #1F2123; --gray-900: #101316;
+
+  --green-100: #E4EFEA; --green-200: #BEDACD; --green-300: #76B297;
+  --green-400: #4A9E6B; --green-500: #1F8561; --green-600: #0A6D42;
+  --green-700: #095933; --green-800: #024423;
+
+  --orange-100: #FCEAE3; --orange-200: #FFCFB2; --orange-600: #CC4B18;
+  --orange-700: #B73A18; --orange-800: #932516;
+
+  --blue-100: #DEE9F7; --blue-200: #CCDDF2; --blue-300: #9BBFE0;
+  --blue-400: #5C99D6; --blue-500: #3885BA; --blue-600: #2779B0;
+  --blue-700: #0767A8; --blue-800: #11608A; --blue-900: #005377;
+
+  --rose-100: #FAF1F3; --rose-800: #99314F;
+  --yellow-100: #FCF1D7; --yellow-700: #994E04;
+
+  --alpha-dark-10: rgba(16, 19, 22, 0.10);
+  --alpha-dark-25: rgba(16, 19, 22, 0.25);
+  --alpha-white-70: rgba(255, 255, 255, 0.70);
+  --alpha-white-85: rgba(255, 255, 255, 0.85);
+
+  /* Negative values (dark red) and positive (green). */
+  --negative: var(--brand-700);
+  --positive: var(--green-600);
+
+  --shadow-1: 0 1px 4px var(--alpha-dark-10);
+  --shadow-2: 0 2px 8px var(--alpha-dark-10);
+  --shadow-3: 0 3px 12px var(--alpha-dark-10);
+  --shadow-4: 0 4px 16px var(--alpha-dark-10);
+  --shadow-5: 0 5px 20px var(--alpha-dark-10);
+  --shadow-6: 0 6px 28px var(--alpha-dark-10);
+
+  --r4: 4px; --r8: 8px; --r12: 12px; --r16: 16px; --r20: 20px; --r24: 24px;
+  --full: 999px;
+
+  --font: "Whitney", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --ease: cubic-bezier(0.42, 0, 0.58, 1);
+  --ease-out: cubic-bezier(0, 0, 0.58, 1);
+  --d150: 150ms; --d200: 200ms; --d250: 250ms; --d300: 300ms; --d600: 600ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --d150: 0ms; --d200: 0ms; --d250: 0ms; --d300: 0ms; --d600: 0ms; }
+}
+
+/* Type scale: size / line height / weight (lib/theme/obr_typography.dart). */
+.t-display-lg { font-size: 36px; line-height: 44px; font-weight: 500; }
+.t-display-md { font-size: 32px; line-height: 40px; font-weight: 500; }
+.t-display-sm { font-size: 28px; line-height: 32px; font-weight: 500; }
+.t-heading-lg { font-size: 24px; line-height: 28px; font-weight: 500; }
+.t-heading-md { font-size: 22px; line-height: 28px; font-weight: 500; }
+.t-heading-sm { font-size: 20px; line-height: 24px; font-weight: 500; }
+.t-heading-xs { font-size: 18px; line-height: 20px; font-weight: 600; }
+.t-subhead { font-size: 17px; line-height: 20px; font-weight: 500; }
+.t-body-lg { font-size: 16px; line-height: 24px; font-weight: 500; }
+.t-body-lg-book { font-size: 16px; line-height: 24px; font-weight: 400; }
+.t-body-md { font-size: 14px; line-height: 20px; font-weight: 500; }
+.t-body-md-book { font-size: 14px; line-height: 20px; font-weight: 400; }
+.t-label-lg { font-size: 16px; line-height: 20px; font-weight: 500; }
+.t-label-md { font-size: 14px; line-height: 16px; font-weight: 500; }
+.t-caption { font-size: 12px; line-height: 16px; font-weight: 400; }
+.semibold { font-weight: 600 !important; }
+.book { font-weight: 400 !important; }
+.tabular { font-variant-numeric: tabular-nums; }
+.caps { text-transform: uppercase; letter-spacing: 1.2px; }

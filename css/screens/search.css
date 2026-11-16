@@ -1,0 +1,206 @@
+/* Search and stock details screens. */
+
+/* ── Search ── */
+.search-top-wrap { flex: none; }
+.search-top {
+  display: flex; align-items: center; gap: 4px;
+  padding: 8px 16px 8px 8px;
+  border-bottom: 1px solid transparent;
+  transition: padding var(--d200) var(--ease), border-color var(--d200) var(--ease);
+  background: var(--gray-50);
+}
+.search-top.condensed { padding-top: 4px; padding-bottom: 4px; border-bottom-color: var(--gray-200); }
+.search-pill {
+  flex: 1; min-width: 0; height: 64px;
+  display: flex; align-items: center; gap: 12px;
+  padding: 0 8px 0 24px;
+  background: var(--gray-0); border: 1px solid var(--gray-200);
+  border-radius: var(--full); box-shadow: var(--shadow-4);
+}
+.search-input {
+  flex: 1; min-width: 0; border: 0; outline: none; background: transparent;
+  font-size: 16px; line-height: 24px; font-weight: 500; color: var(--gray-800);
+  caret-color: var(--brand-600); padding: 0;
+  -webkit-appearance: none; appearance: none;
+}
+.search-input::placeholder { color: var(--gray-500); font-weight: 400; }
+.search-input::-webkit-search-cancel-button { display: none; }
+.search-body { }
+.search-content { padding: 16px 20px 32px; }
+.search-label { margin: 0; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 1.2px; color: var(--gray-600); }
+
+.search-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.search-chip {
+  min-height: 44px; padding: 0 16px; display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gray-0); border: 1px solid var(--gray-400); border-radius: var(--full);
+}
+.search-chip:hover { background: var(--gray-100); }
+.search-chip .sym { font-size: 16px; line-height: 24px; font-weight: 600; color: var(--gray-900); }
+.search-chip .price { font-size: 16px; line-height: 24px; font-weight: 400; color: var(--gray-600); }
+
+.search-market {
+  height: 44px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none;
+  margin: 0 -20px; padding: 0 20px; cursor: grab; touch-action: pan-x pan-y;
+}
+.search-market::-webkit-scrollbar { display: none; }
+.search-market-track { display: flex; height: 100%; width: max-content; }
+.search-market-card {
+  flex: none; height: 44px; margin-right: 12px; padding: 0 16px;
+  display: flex; align-items: center;
+  background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: var(--r12);
+  white-space: nowrap; user-select: none;
+}
+.search-market-card .name { font-size: 14px; line-height: 20px; font-weight: 600; color: var(--gray-900); }
+.search-market-card .val { margin-left: 8px; font-size: 14px; line-height: 20px; color: var(--gray-600); }
+.search-market-card .icon { margin-left: 12px; }
+.search-market-card .pct { margin-left: 2px; font-size: 14px; line-height: 20px; font-weight: 700; }
+.search-market-card .chg { margin-left: 8px; font-size: 14px; line-height: 20px; }
+
+.search-movers { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.search-mover {
+  min-height: 44px; padding: 0 12px; display: flex; align-items: center;
+  background: var(--gray-0); border: 1px solid var(--gray-400); border-radius: var(--r8);
+  text-align: left; width: 100%;
+}
+button.search-mover:hover { background: var(--gray-100); }
+.search-mover .sym { flex: 1; min-width: 0; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--gray-900); }
+.search-mover .pct { font-size: 16px; line-height: 24px; font-weight: 500; }
+
+.search-links { overflow: hidden; }
+.search-link { width: 100%; min-height: 56px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; text-align: left; }
+.search-link:hover { background: var(--gray-100); }
+.search-link .circle { width: 40px; height: 40px; border-radius: 50%; background: var(--gray-100); color: var(--gray-700); display: flex; align-items: center; justify-content: center; flex: none; }
+
+.search-result { width: 100%; padding: 12px 0; display: flex; align-items: center; gap: 12px; text-align: left; }
+.search-result:hover { background: var(--gray-100); }
+.search-result .sym { width: 64px; flex: none; margin-right: -12px; font-size: 16px; line-height: 24px; font-weight: 600; }
+.search-result .name { font-size: 14px; line-height: 20px; color: var(--gray-700); }
+.search-result .exch { font-size: 12px; line-height: 16px; color: var(--gray-600); }
+
+/* ── Stock details ── */
+.quote-topbar {
+  flex: none; height: 56px; display: flex; align-items: center; padding: 0 4px;
+  background: var(--gray-0); border-bottom: 1px solid transparent;
+  transition: border-color var(--d200);
+}
+.quote-topbar.compact { border-bottom-color: var(--gray-200); }
+.quote-compact-title { flex: 1; min-width: 0; text-align: center; white-space: nowrap; overflow: hidden; }
+.quote-topbar.compact .quote-compact-title > span { animation: quote-in var(--d200) var(--ease-out); display: inline-block; }
+@keyframes quote-in { from { opacity: 0; transform: translateY(25%); } to { opacity: 1; transform: none; } }
+.quote-compact-title .sym { font-size: 16px; line-height: 24px; font-weight: 400; color: var(--gray-600); }
+.quote-compact-title .px { font-size: 16px; line-height: 24px; font-weight: 600; color: var(--gray-900); }
+
+.quote-content { padding: 8px 20px 32px; }
+.quote-header { display: flex; align-items: center; gap: 12px; }
+.quote-monogram { flex: none; border-radius: 50%; background: var(--gray-100); color: var(--gray-700); display: flex; align-items: center; justify-content: center; }
+.quote-frac-tag {
+  flex: none; min-height: 32px; padding: 4px 8px; border-radius: var(--r8);
+  background: var(--gray-100); color: var(--gray-700); font-size: 16px; line-height: 24px; font-weight: 600;
+}
+.quote-frac-tag:hover { background: var(--gray-200); }
+
+.quote-price-card {
+  width: 100%; display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: 8px;
+  padding: 8px 16px; text-align: left;
+  background: var(--gray-0); border: 1px solid var(--gray-200); border-radius: 8px 8px 0 0;
+}
+.quote-price-card:hover { background: var(--gray-50); }
+.quote-price-card .price { font-size: 32px; line-height: 40px; font-weight: 500; color: var(--gray-800); }
+.quote-price-card .cur { padding-bottom: 4px; font-size: 16px; line-height: 24px; color: var(--gray-600); }
+.quote-price-card .chg { padding-bottom: 4px; display: inline-flex; align-items: center; gap: 2px; font-size: 16px; line-height: 24px; font-weight: 500; }
+.quote-price-card .period { margin-bottom: 4px; padding: 2px 8px; border-radius: var(--full); background: var(--gray-100); color: var(--gray-700); font-size: 12px; line-height: 16px; font-weight: 600; align-self: flex-end; }
+
+.quote-bid-slot { margin-top: -1px; }
+.quote-bidask { display: flex; background: var(--gray-0); border: 1px solid var(--gray-200); border-radius: 0 0 8px 8px; overflow: hidden; }
+.quote-bidask .vdiv { width: 1px; background: var(--gray-200); flex: none; }
+.quote-side { flex: 1; min-width: 0; min-height: 44px; padding: 0 12px; display: flex; align-items: center; gap: 8px; }
+.quote-side:hover { background: var(--gray-50); }
+.quote-side .lbl { font-size: 14px; line-height: 20px; color: var(--gray-600); }
+.quote-side .figs { flex: 1; min-width: 0; display: flex; align-items: baseline; justify-content: flex-end; gap: 4px; white-space: nowrap; }
+.quote-side.end .figs { justify-content: flex-start; }
+.quote-side .p { font-size: 18px; line-height: 20px; font-weight: 600; }
+.quote-side .p.ask { color: var(--orange-700); }
+.quote-side .size { font-size: 12px; line-height: 16px; color: var(--gray-700); }
+
+.quote-pos { background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: var(--r8); overflow: hidden; }
+.quote-pos-head { min-height: 64px; padding: 8px 12px 8px 20px; display: flex; align-items: center; cursor: pointer; }
+.quote-pos-head .info { width: 44px; height: 44px; display: flex; align-items: center; padding-left: 3px; }
+.quote-pos-head .total { white-space: nowrap; color: var(--gray-800); }
+.quote-pos-head .chev { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; transition: transform var(--d200); }
+.quote-pos-head .chev.open { transform: rotate(180deg); }
+.quote-pos-body { padding: 0 20px 16px; }
+.quote-acct .left { width: 104px; flex: none; margin-right: 12px; }
+.quote-fig { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+.quote-fig .l { flex: 1; font-size: 16px; line-height: 24px; color: var(--gray-600); }
+.quote-fig .v { font-size: 16px; line-height: 24px; font-weight: 600; color: var(--gray-800); white-space: nowrap; }
+
+.quote-lines { display: flex; flex-direction: column; }
+.quote-open { padding-left: 120px; text-align: center; font-size: 14px; line-height: 20px; color: var(--gray-600); margin-bottom: 4px; }
+.quote-open b, .quote-line b { font-weight: 600; color: var(--gray-800); }
+.quote-line { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.quote-line:last-child { margin-bottom: 0; }
+.quote-line .lbl { width: 112px; flex: none; text-align: right; font-size: 16px; line-height: 20px; color: var(--gray-600); }
+.quote-bar { height: 28px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--r4); position: relative; overflow: hidden; }
+.quote-bar.range { display: flex; align-items: center; gap: 8px; padding: 0 4px; }
+.quote-bar .end { font-size: 14px; line-height: 16px; font-weight: 600; color: var(--gray-800); white-space: nowrap; }
+.quote-bar .track { flex: 1; position: relative; height: 100%; }
+.quote-bar .tick { position: absolute; top: 4px; bottom: 4px; width: 1px; background: var(--gray-300); transform: translateX(-0.5px); }
+.quote-bar .dot { position: absolute; top: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--gray-800); transform: translate(-50%, -50%); }
+.quote-bar .diamond { position: absolute; top: 50%; width: 6.4px; height: 6.4px; background: var(--gray-500); transform: translate(-50%, -50%) rotate(45deg); }
+.quote-bar.vol .fill { position: absolute; left: 0; top: 0; bottom: 0; background: var(--gray-200); }
+.quote-bar.vol .txt { position: absolute; left: 4px; right: 4px; top: 0; bottom: 0; display: flex; align-items: center; gap: 4px; font-size: 14px; line-height: 20px; color: var(--gray-700); white-space: nowrap; overflow: hidden; }
+
+.quote-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.quote-ratings { background: var(--gray-100); border-radius: var(--r16); padding: 20px; display: flex; align-items: center; gap: 20px; }
+.quote-ratings .donut { position: relative; width: 112px; height: 112px; flex: none; }
+.quote-ratings .donut svg { position: absolute; inset: 0; }
+.quote-ratings .mid { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--gray-700); }
+.quote-legends { margin-top: 8px; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 12px; }
+.quote-legend { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; line-height: 20px; }
+.quote-legend .sw { width: 12px; height: 12px; border-radius: 50%; }
+.quote-legend .sw.buy { background: var(--green-600); } .buy-t { color: var(--green-600); }
+.quote-legend .sw.hold { background: var(--gray-600); } .hold-t { color: var(--gray-700); }
+.quote-legend .sw.sell { background: var(--orange-700); } .sell-t { color: var(--orange-700); }
+
+.quote-carousel {
+  display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  margin-right: -20px; padding-right: 20px; scrollbar-width: none;
+}
+.quote-carousel::-webkit-scrollbar { display: none; }
+.quote-promo {
+  flex: none; width: 86%; min-height: 120px; scroll-snap-align: start;
+  display: flex; align-items: center; gap: 16px; padding: 16px;
+  background: var(--gray-0); border: 1px solid var(--gray-200); border-radius: var(--r16);
+}
+.quote-promo:hover { background: var(--gray-50); }
+.quote-promo .circle { width: 64px; height: 64px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; flex: none; }
+.clamp2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.quote-autoinvest { background: var(--gray-100); border-radius: var(--r16); padding: 32px 24px 24px; }
+.quote-autoinvest .getstarted { margin-top: 8px; min-height: 44px; display: inline-flex; align-items: center; color: var(--brand-600); font-size: 14px; line-height: 20px; font-weight: 500; }
+
+.quote-ev-title { margin: 0; padding: 8px 0 4px; font-size: 17px; line-height: 20px; font-weight: 500; color: var(--gray-800); }
+.quote-ev { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; }
+.quote-ev .date { width: 60px; flex: none; margin-right: -4px; padding-top: 2px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--gray-900); }
+.quote-tag {
+  display: inline-block; padding: 4px 12px; border-radius: var(--full);
+  background: var(--gray-0); border: 1px solid var(--gray-400);
+  font-size: 12px; line-height: 16px; color: var(--gray-800); white-space: nowrap;
+}
+.quote-tag.past { background: var(--gray-100); border-color: var(--gray-200); }
+.quote-today { margin: 8px 0; padding: 4px 12px; background: var(--gray-100); border-radius: var(--r12); }
+
+.quote-tradebar {
+  flex: none; display: flex; gap: 12px;
+  padding: 8px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  background: var(--gray-50);
+}
+.quote-sell, .quote-buy {
+  flex: 1; min-height: 56px; border-radius: var(--full);
+  font-size: 18px; line-height: 20px; font-weight: 600;
+}
+.quote-sell { background: var(--gray-0); color: var(--gray-900); border: 1px solid var(--gray-900); }
+.quote-sell:disabled { border-color: var(--gray-300); color: var(--gray-500); }
+.quote-buy { background: var(--gray-900); color: var(--gray-0); }
+.quote-buy:hover { background: var(--gray-800); }
